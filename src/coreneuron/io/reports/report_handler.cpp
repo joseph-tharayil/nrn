@@ -368,8 +368,8 @@ VarsToReport ReportHandler::get_lfp_vars_to_report(const NrnThread& nt,
     VarsToReport vars_to_report;
     off_t offset_lfp = 0;
     for (const auto& gid: gids_to_report) {
-        // IClamp is needed for the LFP calculation
-        auto mech_id = nrn_get_mechtype("IClamp");
+        // SEClamp is needed for the LFP calculation
+        auto mech_id = nrn_get_mechtype("SEClamp");
         Memb_list* ml = nt._ml_list[mech_id];
         if (ml) {
             for (int j = 0; j < ml->nodecount; j++) {
